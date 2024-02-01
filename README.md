@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=qRB5DnHQ9bY
 Some screenshots of the app:
 
 <img width="228" alt="image" src="https://github.com/gleni1/Fitness-Application/assets/78774329/db24c4f0-0fe5-4a17-80b4-974d6d6209c6">
-<br/>
+
 <img width="210" alt="image" src="https://github.com/gleni1/Fitness-Application/assets/78774329/1d15549d-165c-4c34-9aaf-13b52ae45c00">
 
 <img width="232" alt="image" src="https://github.com/gleni1/Fitness-Application/assets/78774329/f77f1adb-5fab-42e9-9fff-f338ea81834b">
