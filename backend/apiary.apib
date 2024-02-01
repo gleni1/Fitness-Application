@@ -1,0 +1,814 @@
+FORMAT: 1A
+HOST: temp/
+
+# Tru-Fit Backend
+
+All of the Documentation for the backend for Tru-Fit. If any functionality isn't present, contact a corresponding backend developer to have that functionality created or added to the API. It is implied that an "ok" mesage containing true or false is sent back to tell if the request succeeded. This will be replaced with status codes in later versions.
+
+## Register User [/signup]
+
+### Register User [POST]
+Registers a new user, takes in a JSON with all available information and puts them into the database
+
++ Request (application/json)
+
+        {
+            "firstName":"test",
+            "lastName":"ing",
+            "password":"abc123",
+            "email":"testcoach@a.com",
+            "phoneNumber":"123456789",
+            "streetAddress":"123 Elmo Street",
+            "city":"Newark",
+            "state":"NJ",
+            "zip":"11223",
+            "role":"coach",
+        }
+        
++ Response 201 (application/json)
+
+        {
+           "user": {
+                        "userID": 123,
+                        "role":"coach"
+                    }
+        }
+        
++ Response 406 (application/json)
+
+        {
+           "user": {
+                        "userID": 123,
+                        "role":"coach"
+                    }
+        }
+
+## Login [/login]
+
+### Login [POST]
+
+Login a user using this action. It takes in the user's email and password in the form of a JSON and returns the user's data
+
++ Request (application/json)
+
+        {
+            "email": "email",
+            "password": "Password1"
+        }
+
++ Response 200 (application/json)
+
+            {
+                "user": {
+                    "userID": 123,
+                    "role":"coach"
+                }
+            }
+            
++ Response 404 (application/json)
+
+        {
+            "message": "No such user found"
+        }
+
+## Goals [/goalsList]
+
+### Retrieve Goals [GET]
+
+Returns a list containing all the goals
+
++ Response 200 (application/json)
+
+        [{
+            "goal": "Flexibility"
+        },
+        ...
+        {
+            "goal": "Increased Indurance"
+        },
+        
+        ]
+        
+        
+## Client Survey [/client-survey]
+
+### Client Survey [POST]
+Takes in User ID and survey info and inserts values into database
+
++ Request (application/json)
+
+        {
+            "userID": 123,
+            "currentFitnessLevel":"beginner",
+            "currentDiet":1,
+            "currentExerciseSchedule":"0-2",
+            "fitnessGoal":"gain muscle",
+        }
+
++ Response 201 (application/json)
+
+        {
+           "user": {
+                        "userID": 123,
+                        "role":"client"
+                    }
+        }
+        
++ Response 500 (application/json)
+
+        {
+           "user": {
+                        "userID": 123,
+                        "role":"client"
+                    }
+        }
+
+## Coach Survey [/coach-survey]
+
+### Coach Survey [POST]
+Takes in User ID and survey info and inserts values into database
+
++ Request (application/json)
+
+        {
+            "userID": 123,
+            "experience": 5,
+            "cost": 50,
+            "goal": 'gain muscle'
+        }
+
++ Response 201 (application/json)
+
+        {
+           "user": {
+                        "userID": 123,
+                        "role":"client"
+                    }
+        }
+        
++ Response 500 (application/json)
+
+        {
+           "user": {
+                        "userID": 123,
+                        "role":"client"
+                    }
+        }
+        
+## Survey [/surveyfetch/:userId]
+
+### Get Survey [GET]
+Given a User ID return the corresponding client survey
+
++ Response 200 (application/json)
+
+        {
+            "surveyData":
+                [{
+                    "user_id":4,
+                    "fitness_level":"beginner",
+                    "diet":3800,
+                    "weekly_exercise":"3-5",
+                    "goal_id":4,
+                    "last_update":"2023-12-11T18:30:06.000Z"
+                }]
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "surveyData":[{}]
+        }
+
+
+## Accepted Clients [/acceptedClients/:userId]
+
+### Get Accepted Clients [GET]
+Given a User ID return the all of this coach's accepted clients
+
++ Response 200 (application/json)
+
+        {
+            "acceptedClients":
+                [{
+                    "user_id": 5,
+                    "first_name": "Willy",
+                    "last_name": "Cheesley",
+                    "phone_number": "2395742160",
+                    "street_address": "12 Union Avenue",
+                    "city": "Lehigh Acres",
+                    "state": "FL",
+                    "zip": "33972",
+                    "role": "client",
+                    "last_update": "2023-12-11T18:30:06.000Z",
+                    "fitness_level": "advanced",
+                    "diet": 1200,
+                    "weekly_exercise": "6-8",
+                    "goal_id": 4,
+                    "goal_description": "enhance flexibility"
+                },
+                ...
+                {
+                    "user_id": 142,
+                    ...
+                    "goal_description": "lose weight"
+                }]
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "acceptedClients":[{}]
+        }
+
+## Pending Clients [/clientRequestsFetch/:userId]
+
+### Get Pending Clients [GET]
+Given a User ID return the all of this coach's pending clients
+
++ Response 200 (application/json)
+
+        {
+            "Data":
+                [{
+                    "user_id": 5,
+                    "first_name": "Willy",
+                    "last_name": "Cheesley",
+                    "phone_number": "2395742160",
+                    "street_address": "12 Union Avenue",
+                    "city": "Lehigh Acres",
+                    "state": "FL",
+                    "zip": "33972",
+                    "role": "client",
+                    "last_update": "2023-12-11T18:30:06.000Z",
+                    "fitness_level": "advanced",
+                    "diet": 1200,
+                    "weekly_exercise": "6-8",
+                    "goal_id": 4,
+                    "goal_description": "enhance flexibility"
+                },
+                ...
+                {
+                    "user_id": 142,
+                    ...
+                    "goal_description": "lose weight"
+                }]
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "acceptedClients":[{}]
+        }
+
+## Exercise [/exercises]
+
+### Get Exercises [GET]
+Gets all exercises
+
+        
++ Response 200 (application/json)
+
+        {
+            "exercises": [
+                {
+                    "exercise_name": "Deadlifts",
+                    "equipment_name": "Barbell",
+                    "steps": "Stand with a barbell or dumbbells in front of your thighs, feet hip-width apart. Hinge at your hips while maintaining a slight bend in your knees, lowering the weights along your legs until you feel a stretch in your hamstrings, then return to the starting position, focusing on your hamstrings and glutes."
+                },
+                ...
+                {
+                    "exercise_name": "Shoulder Press",
+                    "equipment_name": "Barbell",
+                    "steps": "Sit or stand with dumbbells at shoulder height, palms facing your torso. Press the weights overhead while keeping your back straight, then lower them back to shoulder height, engaging your shoulder muscles and deltoids."
+                }
+        }
+        
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error retrieving exercises"
+        }
+
+## Workout Add [/workoutsadded]
+
+### Workout Add [POST]
+Give a user a premade workout
+
++ Request (application/json)
+
+        {
+            "userID":123,
+            "workoutID": 321
+        }
+
++ Response 201 (application/json)
+
+        {
+            "message": "User workout inserted successfully",
+            "insertID":456
+            
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error inserting user workout"
+        }
+
+## Workout Remove [/workoutsremoved]
+
+### Remove Workout [DELETE]
+Remove a workout from a user's profile
+
++ Request (application/json)
+
+        {
+            "userID":123,
+            "workoutID": 321
+        }
+
++ Response 200 (application/json)
+
+        {
+            "message": "User workout removed successfully",
+            
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error removed user workout"
+        }
+        
+## Activity Survey [/activitySurvey]
+
+### Record Daily Activities [POST]
+Record all activity of a daily activity
+
++ Request (application/json)
+        
+        {
+            "userID":1123,
+            "calorieIntake":200,
+            "bodyWeight":10
+        }
+        
++ Response 201 (application/json)
+
+        {
+            "message": "Daily activity inserted successfully",
+            "insertID": 4312
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error inserting daily activity"
+        }
+
+## Experience [/experienceList]
+### Experience List [GET]
+Return all the experience ranges, for the sake of filtering
+
++ Response 200 (application/json)
+
+        [{
+            'experience': "0-2"
+        },
+        ...
+        {
+            'experience': "9+"
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error retrieving experience list."
+        }
+        
+
+## Experience [/costList]
+### Experience List [GET]
+Return all the cost ranges, for the sake of filtering
+
++ Response 200 (application/json)
+
+        [{
+            'cost': "200"
+        },
+        ...
+        {
+            'cost': "220"
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error retrieving price list"
+        }
+        
+## Location [/locationList]
+### Location List [GET]
+Return all the states coaches occupy, for the sake of filtering
+
++ Response 200 (application/json)
+
+        [{
+            'state': "NJ"
+        },
+        ...
+        {
+            'state': "NY"
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error retrieving location list."
+        }
+
+## Coach List [/coachList]
+### Coach List [GET]
+Return all the coach information from their survey
+
++ Response 200 (application/json)
+
+        [{
+            'user_id':1,
+            'experience':"9+",
+            'price':200,
+            'state': "NJ"
+        },
+        ...
+        {
+            'user_id':2,
+            'experience':"9+",
+            'price':200,
+            'state': "NY"
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error retrieving coaches."
+        }
+
+
+## Accepted Coach List [/acceptedCoach/:clientId]
+### Accepted Coach List [GET]
+Return all the coach information from a user's accepted coach
+
++ Response 200 (application/json)
+
+        [{
+            'user_id':1
+            'experience':"9+",
+            'price':200,
+            'state': "NJ"
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error retrieving accepted coaches."
+        }
+
+## Pending Coach List [/pendingCoach/:clientId]
+### Pending Coach List [GET]
+Return all the coach information from a user's accepted pending coaches
+
++ Response 200 (application/json)
+
+        [{
+            'user_id':1,
+            'experience':"9+",
+            'price':200,
+            'state': "NJ"
+        },
+        ...
+        {
+            'user_id':2,
+            'experience':"9+",
+            'price':200,
+            'state': "NY"
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error retrieving pending coaches."
+        }
+
+## Client Info [/clientInfo/:clientId]
+### Client Info [GET]
+Return a given client's info
++ Response 200 (application/json)
+
+        [{
+            'user_id':1,
+            ...
+            'role':"client"
+        },
+        ...
+        {
+            'user_id':2,
+            ...
+            'role':"client"
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error retrieving clients."
+        }
+
+## Client Workouts [/clientWorkouts/:clientId]
+### Client Workouts [GET]
+Return all of a given client's workouts
++ Response 200 (application/json)
+
+        [{
+            'workout_id':1,
+            ...
+            'workout_name':"Push-up"
+        },
+        ...
+        {
+            'workout_id':2,
+            ...
+            'workout_name':"Sit-up"
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error retrieving workouts."
+        }
+
+## Request Coach [/requestCoach]
+### Request Coach [POST]
+Adds a request for a coach
++ Request (application/json)
+
+        {
+            "user_id":1,
+            "items":{
+                        ...
+                        "user_id":2
+                        ...
+                    }
+        }
+
++ Response 200 (application/json)
+
+        
+        {
+            'message':"Successful Coach Request",
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error requesting coach."
+        }
+
+## Remove Client [/removeClient/:clientId/:coachId]
+### Remove Client [GET]
+Break the connection between coach and client
+
++ Response 200 (application/json)
+
+        
+        {
+            'message':"Successful Removed Client",
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Failed to Remove Client."
+        }
+
+## Accept Client [/acceptClient]
+### Accept Client [POST]
+Formalize a connection between coach and client, removing all other pending requests
+
++ Response 200 (application/json)
+
+        
+        {
+            'message':"Successful Accepted Client",
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Failed to Accept Client."
+        }
+
+## Exercise Count [/exerciseCount/:workoutId]
+### Exercise Count [GET]
+Get count of amount of exercises a given workout has
+
++ Response 200 (application/json)
+
+        
+        {
+            'exercise_count':4,
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Failed to Count Exercises."
+        }
+
+## Send Workout Data [/sendWorkoutData/:workoutId]
+### Send Workout Data [PUT]
+Update workout information
+
++ Request (application/json)
+
+        {
+            workout_name: "Twister",
+            goal_id: 4,
+            difficulty: "Begginer"
+        }
+
++ Response 200 (application/json)
+
+        
+        {
+            'message':"Workout Data Successfully Sent",
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Failed to Send Workout Data."
+        }
+
+
+## Send New Workout Data [/sendNewWorkoutData/:workoutId]
+### Send New Workout Data [PUT]
+Insert workout information
+
++ Request (application/json)
+
+        {
+            workout_name: "Twister",
+            goal_id: 4,
+            difficulty: "Begginer" 
+        }
+
++ Response 200 (application/json)
+
+        
+        {
+            'message':"Workout Data Successfully Inserted",
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Failed to Insert Workout Data."
+        }
+
+
+## All Exercise  [/allExercises/:workoutId]
+### All Exercise  [GET]
+Return a list containing all available exercises from a given workout
+
++ Response 200 (application/json)
+
+        [{
+            'exercise_id':1,
+            ...
+            'name':"push-up",
+
+        },
+        ...
+        {
+            'exercise_id':2,
+            ...
+            'name':"sit-up",
+
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error getting Exercises."
+        }
+
+## Exercise List [/exercisesList]
+### Exercise List [GET]
+Return a list containing all available exercises 
+
++ Response 200 (application/json)
+
+        [{
+            'exercise_id':1,
+            ...
+            'name':"push-up",
+
+        },
+        ...
+        {
+            'exercise_id':2,
+            ...
+            'name':"sit-up",
+
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error getting Exercises."
+        }
+
+## Remove Exercise [/deleteExercise/:workoutId]
+### Remove Exercise [DELETE]
+Remove an exercise workout connection
+
++ Request (application/json)
+
+        {
+            'exercise_id':1,
+        }
+
++ Response 200 (application/json)
+
+        {
+            "message":"Deleted Exercise Connection."
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error Deleting Exercise."
+        }
+
+## Chats [/messages/coach/:coachId]
+### Chats [GET]
+Get all chats for a given user
+
++ Response 200 (application/json)
+
+        [{
+            'client_id':1,
+            'coach_id':2
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error Retrieving Chats."
+        }
+        
+     
+## Send Message [/newMessage]
+### Send Mesage [POST]
+Send a new message
+
++ Request (application/json)
+
+        {
+        message: "Hello",
+        chatId:1,
+        sender_id:1,
+        receiver_id:2,
+        }
++ Response 200 (application/json)
+
+        {
+            'message':"Message sent",
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error Sending Message."
+        }
+
+
+## Get Message [/messages/chat/:coachId]
+### Get Mesage [GET]
+Get all messages a given chat
+
++ Response 200 (application/json)
+
+        [{
+            message: "Hello",
+            chatId:1,
+            sender_id:1,
+            receiver_id:2,
+        }]
+        
++ Response 500 (application/json)
+
+        {
+            "message":"Error Getting Messages."
+        }
