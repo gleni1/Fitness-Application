@@ -1,0 +1,107 @@
+
+.overlay2{
+    background: rgba(49,49,49,0.8);
+}
+
+.allComponents{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 55vw;
+    border: 4px solid #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+    justify-content: center;
+    position: fixed;
+    top: 11%;
+    left: 29%;
+    box-shadow: 0px 0px 18px #000000;
+}
+
+
+.addExerciseModal{
+    display: flex;
+    margin-top: 4vh;
+    justify-content: center;
+    padding: 0 90px;
+}
+
+.exerciseElements{
+    margin-top: 2.5vh;
+}
+.exerciseElements span{
+    font-size: 1.15rem;
+    color: #0A2342;
+    display:inline-block;
+    margin-bottom: 23px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-left: 12%;
+    font-size: 2.1rem;
+    text-decoration: underline;
+    color:#000000
+}
+
+.overlay2{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+
+}
+
+.dropdownButtons{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    width: 60%;
+}
+
+.dropdownButtons input{
+    margin-top: 0px;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 35px;
+}
+
+.multi-select{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+}
+
+
+
+.addButton{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.addButton button{
+    background-color: #DE6B48 ;
+    color: white;
+    padding: 0 60px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.4rem;
+}
+
+.addButton button:hover{
+    background-color: rgb(216, 58, 0);
+    color: white;
+}
+

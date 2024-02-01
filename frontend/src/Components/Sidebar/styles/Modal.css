@@ -1,0 +1,48 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  .signup-modal-content button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f76c6c;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+  
+  .modal-content button:hover {
+    background-color: #f44336;
+  }
+  

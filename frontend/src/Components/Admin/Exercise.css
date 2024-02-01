@@ -1,0 +1,57 @@
+#exerciseName{
+    display: block;
+    text-decoration: underline;
+    margin-top: 0px;
+}
+
+.exerciseContainer{
+    background-color: #1B6468;
+    margin-top: 5px;
+    height: auto;
+    width: auto;
+    border-radius: 20px;
+    transition: all 0.2s ease-out;
+}
+
+
+
+.exerciseContent{
+    color: white;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    
+}
+
+
+
+.activate{
+    background-color: #4ee9b1;
+    border: none;
+    border-radius: 10px;
+    padding:5px;
+    margin-left:10px;
+
+}
+
+.activate:hover{
+    background-color: #2e8767;
+}
+.activated{
+    color:#4ee9b1
+}
+.deactivated{
+    color:#d44418
+}
+.deactivate{
+    background-color: #DE6B48;
+    border: none;
+    border-radius: 10px;
+    padding:5px;
+    margin-left:10px;
+}
+
+.deactivate:hover{
+    background-color: #d44418;
+}

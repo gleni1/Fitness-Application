@@ -1,0 +1,42 @@
+.workout-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 700px;
+  width: 700px;
+  border: solid rgb(211, 89, 37) 3px;
+}
+
+.workout-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.modal-header {
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.workout-name {
+    font-size: 1.5rem;
+    margin-left: 5px;
+}

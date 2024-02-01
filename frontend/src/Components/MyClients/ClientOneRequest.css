@@ -1,0 +1,23 @@
+.allRequestss{
+    padding: 10px;
+}
+
+.stack{
+    /* background-color: #1b6468; */
+    color: white;
+    border-radius: 19px;
+    /* padding: 10px 15px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition-duration: 0.2s;
+    margin-top: 10px;
+}
+
+/* .stack:hover,
+.stack:focus,
+.stack:active {
+    transform: scale(1.01);
+    background-color: #103c3e;
+    cursor: pointer;
+} */

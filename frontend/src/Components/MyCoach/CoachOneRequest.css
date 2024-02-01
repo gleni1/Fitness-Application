@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+
+
+*{
+    font-family: "Koulen", sans-serif;
+    font-size: 1.1rem;
+}
+
+.overlay1{
+    background: rgba(49,49,49,0.8);
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 600px;
+    /* border: 4px solid #FF4742; */
+    border-radius: 10px;
+    padding: 5px;
+    justify-content: center;
+    position: fixed;
+    top: 20%;
+    left: 34%;
+}
+
+
+.coachName{
+    margin-top: -26px;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-left: 9%;
+}
+
+/* .cancel{
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: local;
+    font-size: 1.4rem;
+    padding: 5px;
+} */
+
+.request{
+    margin-top: 15px;
+    width: 200px;
+    background: #2a878c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35%;
+}
+
+.request:hover{
+    /* border: 2px solid black; */
+    background-color: #1d5f62;
+}
+
+
+.popup, .overlay1{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.oneRequest{
+    background-color: #1b6468;
+    color: white;
+    border-radius: 19px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition-duration: 0.2s;
+}
+
+
+.oneRequest:hover,
+.oneRequest:focus,
+.oneRequest:active {
+    transform: scale(1.01);
+    background-color: #103c3e;
+    cursor: pointer;
+}

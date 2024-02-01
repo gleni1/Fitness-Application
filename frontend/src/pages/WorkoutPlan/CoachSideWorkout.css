@@ -1,0 +1,91 @@
+#title{
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    margin-top: 5px
+}
+
+.clientInfoContainer{
+    background-color: #7DBBC3;
+    width: 100%;
+    height: fit-content;
+    margin-top: 15px;
+}
+
+.clientInfo{
+    color: #fff;
+    padding: 5px 20px;
+}
+
+.clientInfo h4 span{
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.workoutsContainer{
+    margin-top: 15px;
+    background-color: #7DBBC3;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    max-width: 100%;
+    min-height: 45vh;
+    height: fit-content;
+    /* max-height: 60vh; */
+    overflow: auto;
+    margin-bottom: 2vh;
+}
+
+.allWorkouts{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap; */
+    
+   
+}
+
+
+.buttonDiv{
+    display: flex;
+    justify-content: center;    
+    /* margin-top: 6.5vh; */
+    position:initial ;
+}
+
+.createButton{
+    background-color: #148dd9;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 30px;
+    font-size: 1.4rem;
+    color: white;
+    transition: all 250ms;
+}
+
+.createButton:hover{
+    background-color: #0068a9;
+    transform: scale(1.03);
+}
+
+.oneWorkoutTab:hover{
+    background-color: #148dd9;
+}
+
+.close-btn{
+    margin-left: 1.5vw;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 1vh;
+    width: fit-content;
+    background-color: rgb(182, 36, 36);
+    border: none;
+    border-radius: 10px;
+    transition: 0.2s;
+    display: block;
+    margin: auto;
+    margin-bottom: 3vh;
+}
+
+.close-btn:hover{
+    transform: scale(1.05);
+}

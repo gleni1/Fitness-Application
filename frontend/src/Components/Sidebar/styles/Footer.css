@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Space+Grotesk:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+
+.login-signup{
+  margin-top: auto; 
+  text-align: center; 
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  width: 200px;
+  position: sticky;
+  margin-bottom: 10px;
+  /* gap: 10px; */
+  /* align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 32px; */
+}
+
+.footer a{
+  margin-top: 0;
+  text-decoration: none;
+  /* text-align: center; */
+  width: 88%;
+  color: #000;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  transition-duration: 0.1s;
+  margin-left: 12px;
+  /* width: fit-content; */
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.footer a:hover{
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.697);
+  border-radius: 5px;
+  /* transform: scale(1.04); */
+}
+
+.footer .active{
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.697);
+  border-radius: 5px;
+}
+
+.signLogButtons{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 15px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.signLogButtons .login{
+  background-color: rgba(71, 255, 194, 0.738);
+  padding: 3px 14px;
+  border-radius: 5px;
+}
+
+.signLogButtons .login:hover{
+  background-color: rgba(28, 151, 110, 0.738);;
+}
+
+.signLogButtons .signup{
+  background-color: rgb(255, 157, 127);
+  padding: 3px 14px;
+  border-radius: 5px;
+}
+
+.signLogButtons .signup:hover{
+  background-color: rgb(241, 113, 74);
+}

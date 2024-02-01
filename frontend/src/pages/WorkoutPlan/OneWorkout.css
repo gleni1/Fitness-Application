@@ -1,0 +1,58 @@
+#workoutTitle{
+    display: block;
+    margin: auto;
+    text-align: center;
+    /* text-decoration: underline; */
+    margin-bottom: 3vh;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    width: 15vw;
+}
+
+.oneWorkoutContainer{
+    background-color: #1B6468;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 3vh;
+    /* max-width: 30vw;  */
+
+    min-height: 35vh;
+    /* width: fit-content; */
+    min-width: 280px;
+    max-width: 25vw;
+    border-radius: 20px;
+    transition: all 0.2s ease-out;
+    /* overflow-y: auto; */
+}
+
+.oneWorkoutContainer:hover{
+    background-color: #0f3a3c;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.oneWorkoutContent{
+    color: white;
+    padding: 20px;
+
+}
+
+
+.myButton{
+    height: 4.5vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+}
+
+.editButton{
+    background-color: #DE6B48;
+    border: none;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+.editButton:hover{
+    background-color: #d44418;
+}

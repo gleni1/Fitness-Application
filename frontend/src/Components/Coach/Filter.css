@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+
+.filter-by{
+    color:"white",;
+    font-size:1.3rem; 
+    font-family:"Koulen", sans-serif;
+    color: white;
+    padding-left: 20px;
+
+}
+
+
+.top-bar{
+    /* display: flex;
+    justify-content: space-around; */
+    background-color: #7DBBC3;
+    margin-top:-10px;
+}
+
+
+
+
+
+.bar-1{
+    background-color: #7DBBC3;
+}
+/* CSS */
+#button-4 {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 16px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+  font-size:1.1rem; 
+  font-family:"Koulen", sans-serif;
+}
+
+#button-4:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+#button-4:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+#button-4:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+#button-4:focus {
+  outline: 1px transparent;
+}
+
+#button-4:before {
+  display: none;
+}
+
+#button-4:-webkit-details-marker {
+  display: none;
+}
+
+.apply-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#apply{
+    background: #FF4742;
+    border: 1px #FF4742;
+    border-radius: 16px;
+    font-family: "Koulen",sans-serif;
+    padding: 2px 30px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    margin-right: 20px;
+    border: 1.5px solid transparent; /* Reserve space for border */
+    transition: border-color 0.2s ease;
+}
+
+
+#apply:hover,
+#apply:active {
+  background-color: #ff4742;
+  background-position: 0 0;
+  color: white;
+  border: 1.5px solid white;
+}
+
+#apply:active {
+  opacity: .5;
+}
+

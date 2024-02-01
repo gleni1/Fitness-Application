@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+.coach-page{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+
+.coaches{
+    width:100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.container{
+    padding: 1.3px;
+}
+
+.coaches-txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    font-family: "Koulen",sans-serif;
+}

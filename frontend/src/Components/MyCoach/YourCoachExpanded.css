@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+
+
+
+
+*{
+    font-family: "Koulen", sans-serif;
+    font-size: 1.1rem;
+}
+
+.yourCoach{
+    background-color: #1b6468;
+    color: white;
+    border-radius: 19px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition-duration: 0.2s;
+}
+
+
+.yourCoach:hover,
+.yourCoach:focus,
+.yourCoach:active {
+    transform: scale(1.01);
+    background-color: #103c3e;
+    cursor: pointer;
+}
+
+
+
+.request1{
+    margin-top: 15px;
+    width: 200px;
+    background: #7DBBC3;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+}
+
+.request2{
+    margin-top: 15px;
+    width: 200px;
+    background: #FF4742;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.request1:hover{
+    background-color: #40787f;
+}
+
+
+
+.request2:hover{
+    /* border: 2px solid black; */
+    background-color: #c92222;
+}
+

@@ -1,0 +1,47 @@
+.content{
+    color: black;
+}
+
+.yourClient{
+    background-color: #1b6468;
+    color: white;
+    border-radius: 19px;
+    padding: 10px 15px;
+    transition-duration: 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.popup .content{
+    padding: 10px; /* Padding around content */
+    width: 40%; /* Width of the modal content */
+    max-height: 80%;
+    overflow-y: auto; /* Make it scrollable */
+}
+.yourClient:hover,
+.yourClient:focus,
+.yourClient:active {
+    transform: scale(1.01);
+    background-color: #103c3e;
+    cursor: pointer;
+}
+
+
+
+
+.request3{
+    margin-top: 15px;
+    width: 200px;
+    background: #428eff;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1.1vw;
+}
+
+.request3:hover{
+    background-color: #40787f;
+}

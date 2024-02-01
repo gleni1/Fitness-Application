@@ -1,0 +1,13 @@
+.myClientWorkouts{
+    width:100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.clientsWorkout-text{
+    margin-top: 30px;
+}
